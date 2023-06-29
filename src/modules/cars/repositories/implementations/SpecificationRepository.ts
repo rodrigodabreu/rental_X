@@ -1,14 +1,24 @@
-import { Specification } from '../model/Specification';
+import { Specification } from '../../model/Specification';
+
 import {
 	ICreateSpecificationDTO,
 	ISpecificationsRepository,
-} from './ISpecificationsRepository';
+} from '.././ISpecificationsRepository';
 
 class SpecificationRepository implements ISpecificationsRepository {
 	private specifications: Specification[];
 
-	constructor() {
+	private static INSTANCE: SpecificationRepository;
+
+	public constructor() {
 		this.specifications = [];
+	}
+
+	public static getInstance(): SpecificationRepository {
+		if(!SpecificationRepository.INSTANCE) {
+			SpecificationRepository.INSTANCE = new SpecificationRepository();
+		}
+		return SpecificationRepository.INSTANCE;
 	}
 
 	create({ name, description }: ICreateSpecificationDTO): void {
@@ -21,16 +31,18 @@ class SpecificationRepository implements ISpecificationsRepository {
 		});
 
 		this.specifications.push(specification);
+		console.log(this.specifications)
 	}
 
 	list(): Specification[] {
+		console.log(this.specifications + "Specification Repository antes do this.specifications")
 		return this.specifications;
 	}
 
 	findByName(name: string): Specification {
 		const specification = this.specifications.find(
 			(specification) => specification.name === name
-		);
+			);
 		return specification;
 	}
 }

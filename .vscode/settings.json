@@ -1,0 +1,6 @@
+{
+  "workbench.colorTheme": "Xcode Default (Dark)",
+  "workbench.preferredDarkColorTheme": "Dracula",
+  "window.autoDetectColorScheme": true,
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack"
+}
