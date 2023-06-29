@@ -5,3 +5,9 @@ Basicamente consiste nas partes intercambiáveis em aderir um contrato que permi
 Como que isso acontece?
 
 - Esse princípio deve ser aplicado através da implementação de interfaces e classes que implementam as mesmas.
+
+## Libs
+
+### Upload de arquivos
+
+- Multer (https://www.npmjs.com/package/multer)
