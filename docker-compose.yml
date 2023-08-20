@@ -3,6 +3,20 @@ version: "3.7"
 
 # serviços necessários para rodar a aplicação
 services:
+  #criando o banco de dados postgres
+  database_ignate:
+    image: postgres
+    container_name: database_ignate
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_DB=rentx
+    volumes:
+      - pgdata:/data/postgres #criando o volume dentro do container
+    network_mode: host
   app:
     build: . #. representa o diretório local
     container_name: rentax
@@ -10,6 +24,11 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
+    network_mode: host
+
+volumes:
+  pgdata:
+    driver: local
 # comando docker
 # docker ps ->  mostra todos os containers que estão dorando
 # docker ps -a -> mostra todos os constainers existentes
