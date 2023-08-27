@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Chalk",
+  "workbench.colorTheme": "Visual Studio Dark - C++",
   "workbench.preferredDarkColorTheme": "Dracula",
   "window.autoDetectColorScheme": true,
   "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack"
