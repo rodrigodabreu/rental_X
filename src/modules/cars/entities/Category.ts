@@ -12,7 +12,10 @@ class Category {
 	@Column()
 	description: string;
 
-	@CreateDateColumn()
+	@CreateDateColumn({
+		nullable: false,
+		name: "created_at"
+	})
 	created_at: Date;
 
 	constructor() {
