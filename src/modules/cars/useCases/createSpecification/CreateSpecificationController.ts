@@ -1,6 +1,6 @@
 import { Request, request, Response, response } from 'express';
 
-import {CreateSpecificationUseCase} from '../createSpecification/CreateSpecificationUseCase';
+import {CreateSpecificationUseCase} from './CreateSpecificationUseCase';
 
 class CreateSpecificationController {
 
