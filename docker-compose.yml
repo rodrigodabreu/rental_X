@@ -6,14 +6,14 @@ services:
   #criando o banco de dados postgres
   database_ignate:
     image: postgres
-    container_name: database_ignate
+    container_name: database_ignite
     restart: always
     ports:
       - 5432:5432
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=ignite
-      - POSTGRES_DB=rentx
+      - POSTGRES_DB=rentax
     volumes:
       - pgdata:/data/postgres #criando o volume dentro do container
     network_mode: host
@@ -24,7 +24,6 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
-    network_mode: host
 
 volumes:
   pgdata:
