@@ -31,11 +31,9 @@ class SpecificationRepository implements ISpecificationsRepository {
 		});
 
 		this.specifications.push(specification);
-		console.log(this.specifications)
 	}
 
 	list(): Specification[] {
-		console.log(this.specifications + "Specification Repository antes do this.specifications")
 		return this.specifications;
 	}
 
