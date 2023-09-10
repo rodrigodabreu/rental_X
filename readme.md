@@ -11,3 +11,7 @@ Como que isso acontece?
 ### Upload de arquivos
 
 - Multer (https://www.npmjs.com/package/multer)
+
+### TSyringe
+
+- Funciona como um injetor de dependências
