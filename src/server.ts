@@ -4,6 +4,7 @@ import swaggerFile  from './swagger.json';
 import { router } from './routes';
 import "reflect-metadata";
 import './database'
+import './shared/container'
 
 const app = express();
 const port = 3333;
