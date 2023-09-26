@@ -1,7 +1,7 @@
-import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { inject, injectable } from "tsyringe";
+import { hash } from "bcryptjs";
 
 @injectable()
 class CreateUserUseCase {
@@ -16,10 +16,12 @@ class CreateUserUseCase {
     password,
     driver_license,
   }: ICreateUserDTO): Promise<void> {
+    const passwordHash = await hash(password, 8); //salt - fator utilizado para auxiliar na criptografia
+
     await this.usersRepository.create({
       name,
       email,
-      password,
+      password: passwordHash,
       driver_license,
     });
   }
