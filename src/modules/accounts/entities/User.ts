@@ -22,7 +22,7 @@ class User {
   isAdmin: boolean;
 
   @Column()
-  driverLicense: string;
+  driver_license: string;
 
   @CreateDateColumn({
     nullable: false,
