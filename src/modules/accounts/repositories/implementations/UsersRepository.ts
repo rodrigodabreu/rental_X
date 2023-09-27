@@ -9,12 +9,6 @@ class UsersRepository implements IUsersRepository {
   constructor() {
     this.repository = getRepository(User);
   }
-  findByName(name: string): Promise<User> {
-    throw new Error("Method not implemented.");
-  }
-  list(): Promise<User[]> {
-    throw new Error("Method not implemented.");
-  }
 
   async create({
     name,
@@ -35,6 +29,16 @@ class UsersRepository implements IUsersRepository {
   async findByEmail(email: string): Promise<User> {
     const user = await this.repository.findOne({ email });
     return user;
+  }
+
+  async findByName(name: string): Promise<User> {
+    const user = await this.repository.findOne({ name });
+    return user;
+  }
+
+  async list(): Promise<User[]> {
+    const users = await this.repository.find();
+    return users;
   }
 }
 
